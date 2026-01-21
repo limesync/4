@@ -1,0 +1,50 @@
+# MobRealms Tablist
+
+enabled: true
+update_interval: 100
+
+header:
+  animated: false
+  static:
+    - ""
+    - "    &b&lMOBREALMS"
+    - "  &8▪ &7Conquer the Realms &8▪"
+    - ""
+    - "  &8[&7Players: &f{online}&8/&f{max_players}&8]"
+    - ""
+
+footer:
+  animated: false
+  static:
+    - ""
+    - "  &8▪ &7Level &f{level} &8▪ &7Class &f{class} &8▪"
+    - "  &8▪ &6{coins} Coins &8▪"
+    - ""
+
+player_name:
+  enabled: true
+  prefix:
+    enabled: true
+    use_luckperms: true
+    show_rank: true
+    rank_format: "{rank}"
+    format: "&8[&b{level}&8] "
+  name_color: "&f"
+  suffix:
+    enabled: false
+
+indicators:
+  afk:
+    enabled: true
+    format: " &8[&7AFK&8]"
+  combat:
+    enabled: true
+    format: " &8[&cCombat&8]"
+  staff:
+    enabled: true
+    permission: "mobrealms.staff"
+    format: " &8[&cStaff&8]"
+  vip:
+    enabled: false
+    permission: "mobrealms.vip"
+    format: " &8[&6VIP&8]"

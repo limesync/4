@@ -1,0 +1,22 @@
+# MobRealms MOTD (Hypixel Style)
+
+enabled: true
+
+frames:
+  - line1: "            &b&lMOB&f&lREALMS &7| &f1.20"
+    line2: "        &7Conquer the Realms &a&lNEW!"
+
+version:
+  enabled: true
+  text: "&b&lMobRealms &f1.0.0"
+
+maintenance:
+  enabled: false
+  message:
+    - ""
+    - "        &b&lMOB&f&lREALMS"
+    - ""
+    - "    &c&lUNDER MAINTENANCE"
+    - ""
+    - "   &7We'll be back shortly!"
+    - ""

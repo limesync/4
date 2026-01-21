@@ -1,0 +1,61 @@
+# MobRealms Nametags
+
+enabled: true
+update_interval: 40
+
+format:
+  prefix:
+    enabled: true
+    use_luckperms: true
+    show_rank: true
+    strip_rank_colors: false
+    template: "&8[&b{level}&8] {rank} "
+  name:
+    color: "&f"
+    health_color:
+      enabled: false
+      high: "&a"
+      medium: "&e"
+      low: "&6"
+      critical: "&c"
+    class_color:
+      enabled: false
+      warrior: "&c"
+      mage: "&d"
+      archer: "&a"
+      rogue: "&7"
+  suffix:
+    enabled: false
+    template: ""
+    show_class: false
+    show_health: false
+    health_format: " &7{health}&8/&7{max_health}"
+
+indicators:
+  afk:
+    enabled: true
+    position: "SUFFIX"
+    format: " &7[AFK]"
+  combat:
+    enabled: true
+    position: "PREFIX"
+    format: "&c[⚔] "
+  staff:
+    enabled: true
+    position: "PREFIX"
+    permission: "mobrealms.staff"
+    format: "&c[✦] "
+  vip:
+    enabled: false
+    position: "PREFIX"
+    permission: "mobrealms.vip"
+    format: "&6[✦] "
+  killstreak:
+    enabled: true
+    position: "SUFFIX"
+    minimum: 5
+    format: " &6{killstreak}★"
+
+visibility:
+  max_distance: 64
+  hide_vanished: true

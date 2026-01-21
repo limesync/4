@@ -1,0 +1,178 @@
+# ╔═══════════════════════════════════════════════════════════╗
+# ║           MobRealms - Server MOTD Configuration           ║
+# ╚═══════════════════════════════════════════════════════════╝
+
+# General settings
+enabled: true
+
+# Custom MOTD text
+# Leave empty for animated MOTD
+# Available placeholders: {online}, {max}, {version}
+text: ""
+
+# Max players shown in server list
+# -1 = use actual max players
+# 0 = show as unlimited (∞)
+# Any number = show custom max
+max_players: -1
+
+# Animation settings
+animation:
+  enabled: true
+  # Animation speed (in ticks, 60 = 3 seconds)
+  speed: 60
+  # Type: CYCLE (loop through frames), RANDOM (random frames)
+  type: "CYCLE"
+
+# MOTD Frames
+# Each frame has 2 lines (line1 and line2)
+# Use \n in text for line breaks if using single text field
+frames:
+  frame1:
+    line1: "&7━━━━━━━━ &b&lMOBREALMS &7━━━━━━━━"
+    line2: "    &f✦ &7PvE RPG &8│ &7Custom Classes &8│ &7Epic Bosses &f✦"
+
+  frame2:
+    line1: "&7━━━━━━━━ &f&lMOB&b&lREALMS &7━━━━━━━━"
+    line2: "    &f✦ &6Level Up &8│ &6Kill Mobs &8│ &6Earn Rewards &f✦"
+
+  frame3:
+    line1: "&7━━━━━━━━ &b&lMOBREALMS &7━━━━━━━━"
+    line2: "    &f✦ &eExplore Realms &8│ &eQuests &8│ &eShop System &f✦"
+
+  frame4:
+    line1: "&7━━━━━━━━ &b&lMOBREALMS &7━━━━━━━━"
+    line2: "    &f✦ &d{online}&7/&d{max} Players Online &8│ &dJoin Now! &f✦"
+
+  frame5:
+    line1: "&b▀▀▀▀▀▀ &f&lMOBREALMS &b▀▀▀▀▀▀"
+    line2: "  &7» &fChoose Your Class &7« &fDefeat Epic Bosses &7«"
+
+  frame6:
+    line1: "  &b⚔ &f&lMOBREALMS &b⚔"
+    line2: "&7The Ultimate PvE Experience &8│ &7{online} Players Fighting!"
+
+# Server icon (requires server-icon.png in root folder)
+icon:
+  # Change icon based on player count
+  dynamic_icon: false
+  # Thresholds for different icons
+  thresholds:
+    empty:
+      max_players: 0
+      icon: "server-icon-empty.png"
+    low:
+      max_players: 10
+      icon: "server-icon-low.png"
+    medium:
+      max_players: 30
+      icon: "server-icon-medium.png"
+    high:
+      max_players: 50
+      icon: "server-icon-high.png"
+    full:
+      max_players: 999
+      icon: "server-icon-full.png"
+
+# Hover information (protocol hack - requires ProtocolLib)
+hover:
+  enabled: false
+  lines:
+    - "&7&m━━━━━━━━━━━━━━━━━━━━"
+    - "&b&lMOBREALMS &7- PvE RPG"
+    - ""
+    - "&7Running Version: &f{version}"
+    - "&7Players Online: &f{online}&7/&f{max}"
+    - ""
+    - "&7Available Classes:"
+    - "  &c⚔ Warrior &8│ &d✦ Mage"
+    - "  &a➶ Archer &8│ &7⚡ Rogue"
+    - ""
+    - "&7Features:"
+    - "  &f• &7Custom Classes & Abilities"
+    - "  &f• &7Epic Boss Battles"
+    - "  &f• &7Quest System"
+    - "  &f• &7Realm Progression"
+    - "  &f• &7Shop & Economy"
+    - ""
+    - "&aClick to Join!"
+    - "&7&m━━━━━━━━━━━━━━━━━━━━"
+
+# Player count manipulation (requires ProtocolLib)
+player_count:
+  # Show custom player count
+  enabled: false
+  # Add X players to actual count
+  add_players: 0
+  # Show random player count between min and max
+  randomize: false
+  min: 5
+  max: 50
+
+# Version text (shown in server list)
+version:
+  # Show custom version
+  enabled: true
+  # Custom version text
+  text: "&b&lMobRealms &7v1.0"
+
+# Maintenance mode
+maintenance:
+  enabled: false
+  # Kick non-whitelisted players
+  kick_players: true
+  # Kick message
+  kick_message:
+    - "&c&lServer Maintenance"
+    - ""
+    - "&7We're currently performing maintenance"
+    - "&7to improve your experience!"
+    - ""
+    - "&7Expected return: &fSoon™"
+    - ""
+    - "&7Follow us for updates:"
+    - "&bDiscord: &fdiscord.gg/mobrealms"
+
+  # Maintenance MOTD
+  motd:
+    line1: "&c&lMOBREALMS &7- &c&lMAINTENANCE"
+    line2: "  &7⚠ Server is currently under maintenance ⚠"
+
+  # Whitelist permission (bypass maintenance)
+  bypass_permission: "mobrealms.maintenance.bypass"
+
+# Outdated client/server message
+outdated:
+  # Show custom message for outdated clients
+  enabled: true
+  # Message shown to outdated clients
+  client_message: "&c&lOutdated Client!\n&7Please update to &f{version}"
+  # Message shown to outdated server (shouldn't happen but just in case)
+  server_message: "&c&lOutdated Server!\n&7This server doesn't support your version"
+
+# Special events (date-based MOTDs)
+events:
+  enabled: true
+  events:
+    christmas:
+      # Month-Day format
+      start_date: "12-20"
+      end_date: "12-26"
+      frames:
+        frame1:
+          line1: "&c❅ &f&lMOBREALMS &c❅ &a&lChristmas Event!"
+          line2: "  &7🎄 Special Holiday Rewards & Bosses! 🎄"
+    halloween:
+      start_date: "10-25"
+      end_date: "11-01"
+      frames:
+        frame1:
+          line1: "&6&lMOBREALMS &8&l- &6&lHALLOWEEN EVENT!"
+          line2: "  &7👻 Spooky Mobs & Rewards! 👻"
+    new_year:
+      start_date: "12-31"
+      end_date: "01-02"
+      frames:
+        frame1:
+          line1: "&e&lMOBREALMS &f&l- &e&lHAPPY NEW YEAR!"
+          line2: "  &7🎆 New Year Celebration Event! 🎆"

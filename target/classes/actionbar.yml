@@ -1,0 +1,186 @@
+# ╔═══════════════════════════════════════════════════════════╗
+# ║              MobRealms - ActionBar Configuration          ║
+# ╚═══════════════════════════════════════════════════════════╝
+
+# General settings
+enabled: true
+update_interval: 20
+
+# Default actionbar format
+# Available placeholders: {player}, {level}, {xp}, {xp_required}, {xp_progress},
+# {coins}, {kills}, {deaths}, {kdr}, {class}, {realm}, {combat_timer}, {killstreak}
+default:
+  # Format for non-max level players
+  format: "&f⚡ Level {level} &8│ {xp_bar} &8│ &6⛁ {coins}"
+
+  # Format for max level players
+  format_max_level: "&f⚡ Level {level} &7(MAX) &8│ &6⛁ {coins} Coins"
+
+# Progress bar settings
+progress_bar:
+  # Length of the progress bar (in characters)
+  length: 20
+
+  # Characters to use
+  filled_character: "█"
+  empty_character: "░"
+
+  # Colors
+  filled_color: "&a"
+  empty_color: "&7"
+
+  # Style: SOLID, GRADIENT, PERCENTAGE
+  style: "GRADIENT"
+
+  # Gradient colors (only used if style is GRADIENT)
+  gradient:
+    start_color: "&a"  # Full XP
+    mid_color: "&e"    # Half XP
+    end_color: "&c"    # Low XP
+
+  # Show percentage text
+  show_percentage: true
+  percentage_format: " &7({xp_progress}%)"
+
+# Priority system (highest priority shows first)
+# Combat has highest priority, then killstreak, then events, then default
+priorities:
+  combat: 100
+  killstreak: 90
+  boss_fight: 85
+  quest_progress: 80
+  level_up: 75
+  realm_change: 70
+  default: 1
+
+# Combat mode actionbar
+combat:
+  enabled: true
+  # Format shown during combat
+  format: "&c⚔ Combat &8│ &f{combat_timer}s &8│ &7Health: {health_bar}"
+
+  # Flash effect
+  flash:
+    enabled: true
+    # Flash speed (in ticks)
+    speed: 10
+    colors:
+      - "&c"
+      - "&4"
+
+  # Health bar
+  health_bar:
+    enabled: true
+    length: 10
+    filled_character: "❤"
+    empty_character: "♡"
+    # Color based on health percentage
+    color_gradient:
+      high: "&a"    # > 75%
+      medium: "&e"  # 50-75%
+      low: "&6"     # 25-50%
+      critical: "&c" # < 25%
+
+# Killstreak actionbar
+killstreak:
+  enabled: true
+  # Minimum killstreak to show
+  minimum: 3
+  # Duration to show (in seconds)
+  duration: 5
+  # Format
+  format: "&6🔥 Killstreak: &f{killstreak} &8│ &7Keep going!"
+
+  # Milestones (special messages)
+  milestones:
+    5:
+      format: "&6🔥 &lKILLING SPREE! &r&6{killstreak} kills!"
+      duration: 8
+    10:
+      format: "&c🔥 &lRAMPAGE! &r&c{killstreak} kills!"
+      duration: 10
+    15:
+      format: "&4🔥 &lUNSTOPPABLE! &r&4{killstreak} kills!"
+      duration: 12
+    20:
+      format: "&5🔥 &lGODLIKE! &r&5{killstreak} kills!"
+      duration: 15
+
+# Boss fight actionbar
+boss_fight:
+  enabled: true
+  # Format
+  format: "&c&l{boss_name} &r&8│ {boss_health_bar} &8│ &c{boss_health_percentage}%"
+
+  # Boss health bar
+  health_bar:
+    length: 20
+    filled_character: "█"
+    empty_character: "░"
+    filled_color: "&c"
+    empty_color: "&7"
+
+# Quest progress actionbar
+quest:
+  enabled: true
+  # Show quest progress automatically
+  auto_show: true
+  # Duration to show after quest update (in seconds)
+  duration: 5
+  # Format
+  format: "&e✦ Quest: &f{quest_name} &8│ &7{quest_progress}&7/&7{quest_required}"
+
+# Level up animation
+level_up:
+  enabled: true
+  # Duration (in seconds)
+  duration: 5
+  # Animation frames (shown in sequence)
+  frames:
+    - "&a&l✦ LEVEL UP! ✦"
+    - "&a&l✦✦ LEVEL UP! ✦✦"
+    - "&a&l✦✦✦ LEVEL UP! ✦✦✦"
+    - "&a&l✦✦ LEVEL UP! ✦✦"
+    - "&a&l✦ LEVEL UP! ✦"
+    - "&a&lLevel {level} &r&8│ &7You earned &6{coins_reward} coins!"
+  # Frame speed (in ticks)
+  frame_speed: 4
+
+# Realm change notification
+realm_change:
+  enabled: true
+  # Duration (in seconds)
+  duration: 5
+  # Format
+  format: "&d⚑ Entering: &f{realm} &8│ &7Required Level: &f{realm_level}"
+
+# XP gain notification
+xp_gain:
+  enabled: true
+  # Show XP gains in actionbar
+  show_gains: true
+  # Minimum XP to show
+  minimum_xp: 5
+  # Duration (in seconds)
+  duration: 2
+  # Format
+  format: "&a+ {xp} XP &8│ {xp_bar}"
+
+# Coin gain notification
+coin_gain:
+  enabled: true
+  # Show coin gains in actionbar
+  show_gains: true
+  # Minimum coins to show
+  minimum_coins: 1
+  # Duration (in seconds)
+  duration: 2
+  # Format
+  format: "&6+ {coins} Coins &8│ &7Total: &f{total_coins}"
+
+# World-specific actionbars
+world_specific:
+  enabled: false
+  worlds:
+    lobby:
+      format: "&7Welcome to &b&lMOBREALMS &8│ &7Level {level} &8│ &6⛁ {coins}"

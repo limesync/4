@@ -1,0 +1,69 @@
+# MobRealms Scoreboard
+
+enabled: true
+update_interval: 20
+
+title:
+  animated: false
+  static: "&b&lMOBREALMS"
+
+borders:
+  use_top: false
+  use_bottom: false
+  top: "&8━━━━━━━━━━━━━━━━"
+  bottom: "&8━━━━━━━━━━━━━━━━"
+
+lines:
+  1:
+    enabled: true
+    text: "&8━━━━━━━━━━━━━━━━"
+  2:
+    enabled: true
+    text: ""
+  3:
+    enabled: true
+    text: " &8▪ &7Player"
+  4:
+    enabled: true
+    text: "   &f{player}"
+  5:
+    enabled: true
+    text: ""
+  6:
+    enabled: true
+    text: " &8▪ &7Level &b{level}"
+  7:
+    enabled: true
+    text: " &8▪ &7XP &f{xp}&8/&f{xp_required}"
+  8:
+    enabled: true
+    text: ""
+  9:
+    enabled: true
+    text: " &8▪ &7Class &f{class}"
+  10:
+    enabled: true
+    text: " &8▪ &7Realm &f{realm}"
+  11:
+    enabled: true
+    text: ""
+  12:
+    enabled: true
+    text: " &8▪ &6{coins} Coins"
+  13:
+    enabled: true
+    text: ""
+  14:
+    enabled: true
+    text: " &7K/D &f{kills}&8/&f{deaths}"
+  15:
+    enabled: true
+    text: "&8━━━━━━━━━━━━━━━━"
+
+combat:
+  enabled: true
+  text: "&c⚔ Combat: &f{combat_timer}s"
+
+number_format:
+  use_short_format: true
+  decimal_places: 1

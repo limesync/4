@@ -1,0 +1,354 @@
+# ╔═══════════════════════════════════════════════════════════╗
+# ║              MobRealms - Core Configuration               ║
+# ╚═══════════════════════════════════════════════════════════╝
+#
+# Main configuration file for MobRealms Core plugin
+# For UI configurations, see separate files:
+#   - scoreboard.yml   : Scoreboard configuration
+#   - tablist.yml      : Tablist configuration
+#   - actionbar.yml    : ActionBar configuration
+#   - nametags.yml     : Nametag configuration
+#   - motd.yml         : Server MOTD configuration
+#
+
+# ═══════════════════════════════════════════════════════════
+#                      General Settings
+# ═══════════════════════════════════════════════════════════
+
+# Database configuration
+database:
+  # Database type: SUPABASE, SQLITE, MYSQL
+  type: "SUPABASE"
+
+  # Auto-save interval (in minutes)
+  auto_save_interval: 5
+
+  # SQLite settings (if type is SQLITE)
+  sqlite:
+    file: "mobrealms.db"
+
+  # MySQL settings (if type is MYSQL)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "mobrealms"
+    username: "root"
+    password: "password"
+    # Connection pool settings
+    pool:
+      minimum: 2
+      maximum: 10
+      timeout: 30000
+
+# ═══════════════════════════════════════════════════════════
+#                      Level System
+# ═══════════════════════════════════════════════════════════
+
+level:
+  # Base XP required for level 1
+  base_xp: 100
+
+  # XP multiplier per level
+  xp_multiplier: 1.5
+
+  # Max level
+  max_level: 100
+
+  # XP formula: BASE_XP * (MULTIPLIER ^ (level - 1))
+  # Example: Level 1 = 100, Level 2 = 150, Level 3 = 225, etc.
+
+  # XP sources and multipliers
+  xp_sources:
+    mob_kill: 1.0
+    boss_kill: 3.0
+    quest_complete: 2.0
+    player_kill: 0.0  # PvP disabled by default
+
+  # Rewards per level up
+  rewards:
+    coins: 100
+    # Multiply coins by level
+    coins_per_level: true
+
+# ═══════════════════════════════════════════════════════════
+#                      Class System
+# ═══════════════════════════════════════════════════════════
+
+classes:
+  # Available classes
+  list:
+    - Warrior
+    - Mage
+    - Archer
+    - Rogue
+
+  # Allow class change
+  allow_change: true
+
+  # Cooldown for class change (in hours, -1 to disable)
+  change_cooldown: 24
+
+  # Cost to change class (in coins, 0 to disable)
+  change_cost: 1000
+
+  # Starting class (leave empty to require selection)
+  starting_class: ""
+
+# ═══════════════════════════════════════════════════════════
+#                      Economy System
+# ═══════════════════════════════════════════════════════════
+
+economy:
+  # Starting coins for new players
+  starting_coins: 100
+
+  # Maximum coins a player can have (-1 for unlimited)
+  max_coins: -1
+
+  # Coin sources and multipliers
+  coin_sources:
+    mob_kill: 5
+    boss_kill: 100
+    quest_complete: 50
+    daily_reward: 200
+
+# ═══════════════════════════════════════════════════════════
+#                      Combat System
+# ═══════════════════════════════════════════════════════════
+
+combat:
+  # Combat timer duration (in seconds)
+  duration: 15
+
+  # Prevent commands during combat
+  block_commands: true
+
+  # Blocked commands (checked during combat)
+  blocked_commands:
+    - "spawn"
+    - "lobby"
+    - "home"
+    - "tpa"
+    - "tp"
+
+  # Prevent teleportation during combat
+  block_teleport: true
+
+  # Prevent logging out during combat
+  combat_log_punishment:
+    enabled: true
+    # KILL, DAMAGE, NOTHING
+    action: "KILL"
+    # Damage to deal if action is DAMAGE
+    damage: 15
+
+# ═══════════════════════════════════════════════════════════
+#                      Realm System
+# ═══════════════════════════════════════════════════════════
+
+realms:
+  starter_realm:
+    name: "Starter Realm"
+    required_level: 1
+    description: "A peaceful realm for beginners"
+
+  forest_realm:
+    name: "Forest Realm"
+    required_level: 10
+    description: "Dense forests with stronger enemies"
+
+  crypt_realm:
+    name: "Crypt Realm"
+    required_level: 25
+    description: "Dark crypts filled with undead"
+
+  infernal_realm:
+    name: "Infernal Realm"
+    required_level: 50
+    description: "The fiery depths of hell"
+
+# Lobby world name
+lobby_world: "world"
+
+# ═══════════════════════════════════════════════════════════
+#                      Kit System
+# ═══════════════════════════════════════════════════════════
+
+kit:
+  # Cooldown in hours
+  cooldown_hours: 24
+
+  # Allow VIP to skip cooldown
+  vip_no_cooldown: true
+  vip_permission: "mobrealms.vip"
+
+# ═══════════════════════════════════════════════════════════
+#                      Shop System
+# ═══════════════════════════════════════════════════════════
+
+shop:
+  # Enable shop system
+  enabled: true
+
+  # Require permission to use shop
+  require_permission: false
+  permission: "mobrealms.shop"
+
+# ═══════════════════════════════════════════════════════════
+#                      Quest System
+# ═══════════════════════════════════════════════════════════
+
+quests:
+  # Enable quest system
+  enabled: true
+
+  # Daily quest reset time (24-hour format, e.g., "00:00" for midnight)
+  daily_reset: "00:00"
+
+  # Max active quests per player
+  max_active: 3
+
+  # Auto-accept quests
+  auto_accept: false
+
+# ═══════════════════════════════════════════════════════════
+#                      AFK System
+# ═══════════════════════════════════════════════════════════
+
+afk:
+  # Time in seconds before marking player as AFK
+  timeout_seconds: 180
+
+  # Broadcast when players go AFK or return
+  broadcast: true
+
+  # Kick AFK players after X minutes (-1 to disable)
+  kick_after_minutes: -1
+
+  # Prevent AFK farming (disable XP/coin gains when AFK)
+  prevent_farming: true
+
+# ═══════════════════════════════════════════════════════════
+#                      Killstreak System
+# ═══════════════════════════════════════════════════════════
+
+killstreak:
+  # Enable killstreak system
+  enabled: true
+
+  # Announce killstreaks in chat
+  announce: true
+
+  # Minimum killstreak to announce
+  announce_minimum: 5
+
+  # Reward coins for killstreaks
+  rewards:
+    5: 50
+    10: 150
+    15: 300
+    20: 500
+
+# ═══════════════════════════════════════════════════════════
+#                      Daily Rewards
+# ═══════════════════════════════════════════════════════════
+
+daily_rewards:
+  # Enable daily reward system
+  enabled: true
+
+  # Reward amount (coins)
+  coins: 200
+
+  # Bonus for consecutive days
+  streak_bonus:
+    enabled: true
+    # Additional coins per day
+    per_day: 50
+    # Maximum bonus
+    max_bonus: 500
+
+# ═══════════════════════════════════════════════════════════
+#                      Player Visibility
+# ═══════════════════════════════════════════════════════════
+
+visibility:
+  # Hide players in lobby
+  hide_in_lobby: true
+
+  # Show party members in lobby
+  show_party: true
+
+  # Show friends in lobby (requires friend plugin)
+  show_friends: false
+
+# ═══════════════════════════════════════════════════════════
+#                      Mob Settings
+# ═══════════════════════════════════════════════════════════
+
+mobs:
+  # Prevent mob griefing (creeper explosions, enderman blocks, etc.)
+  prevent_griefing: true
+
+  # Custom mob spawn eggs
+  spawn_eggs:
+    enabled: true
+    require_permission: true
+    permission: "mobrealms.spawnegg"
+
+  # Prevent slime splitting
+  prevent_slime_split: true
+
+# ═══════════════════════════════════════════════════════════
+#                      Chat Settings
+# ═══════════════════════════════════════════════════════════
+
+chat:
+  # Enable custom chat formatting
+  enabled: true
+
+  # Chat format
+  # Placeholders: {player}, {level}, {class}, {rank}, {message}
+  format: "{rank} &7[{level}&7] &f{player}&8: &7{message}"
+
+  # Use LuckPerms for rank colors
+  use_luckperms: true
+
+# ═══════════════════════════════════════════════════════════
+#                      Performance Settings
+# ═══════════════════════════════════════════════════════════
+
+performance:
+  # Async database operations
+  async_database: true
+
+  # Cache player data (reduces database queries)
+  cache_player_data: true
+  cache_duration: 300  # seconds
+
+  # Batch operations
+  batch_updates: true
+  batch_size: 50
+
+# ═══════════════════════════════════════════════════════════
+#                      Debug & Logging
+# ═══════════════════════════════════════════════════════════
+
+# Enable debug mode (verbose logging)
+debug: false
+
+# Log player actions
+logging:
+  player_join: true
+  player_quit: true
+  level_up: true
+  class_change: true
+  quest_complete: true
+  shop_purchase: true
+
+# ═══════════════════════════════════════════════════════════
+#                      Configuration Version
+# ═══════════════════════════════════════════════════════════
+
+# DO NOT CHANGE THIS - used for automatic config updates
+config_version: 2

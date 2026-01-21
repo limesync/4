@@ -1,0 +1,108 @@
+# MobRealms Core Messages (Hypixel Style)
+
+prefix: "&b&lMobRealms &8»&r"
+
+# Class selection
+class:
+  select_prompt: "&aChoose your class to begin!"
+  selected: "&aYou selected the &e{class} &aclass!"
+  already_selected: "&cYou already have a class!"
+  locked: "&cSelect a class first!"
+  reset: "&aClass reset!"
+
+# Level system
+level:
+  levelup: "&6&l✦ LEVEL UP! &r&eYou are now level &6{level}&e!"
+  max_level: "&cMax level reached!"
+
+# Realm system
+realm:
+  insufficient_level: "&cRequires level &e{required_level} &cfor &e{realm}&c!"
+  entered: "&aEntered &e{realm}&a!"
+  spawn_set: "&aSpawn set for &e{realm}&a!"
+
+# Coins
+coins:
+  set: "&aSet &e{player}&a's coins to &6{amount}&a!"
+  added: "&a+&6{amount} coins &ato &e{player}&a!"
+  removed: "&c-&6{amount} coins &cfrom &e{player}&a!"
+  insufficient: "&cNot enough coins!"
+
+# Shop
+shop:
+  purchased: "&a&l✓ &aPurchased {item} &afor &6{price} coins&a!"
+  insufficient_coins: "&c&l✗ &cNeed &6{price} coins&c!"
+  insufficient_level: "&c&l✗ &cRequires level {level}!"
+  class_already_owned: "&c&l✗ &cYou own this class!"
+  class_unlocked: "&a&l✓ &aUnlocked {class} &afor &6{price} coins&a!"
+
+# XP
+xp:
+  set: "&aSet &e{player}&a's XP to &b{amount}&a!"
+  added: "&a+&b{amount} XP &ato &e{player}&a!"
+  gained: "&a+{amount} XP"
+
+# Commands
+command:
+  no_permission: "&cYou don't have permission to use this command!"
+  player_not_found: "&cPlayer not found!"
+  invalid_amount: "&cInvalid amount!"
+  invalid_class: "&cInvalid class! Available: Warrior, Mage, Archer, Rogue"
+  lobby_set: "&aLobby spawn has been set!"
+  npc_spawned: "&aBegin Adventure NPC has been spawned!"
+  usage: "&cUsage: {usage}"
+
+# Kit system
+kit:
+  received: "&aYou received your &e{class} &akit!"
+  cooldown: "&cYou must wait &e{time} &cbefore claiming another kit!"
+  no_class: "&cYou must select a class first!"
+  invalid_class: "&cInvalid class!"
+
+# Teleportation
+teleport:
+  spawn: "&aYou have been teleported to spawn!"
+  lobby: "&aYou have been teleported to lobby!"
+
+# Error messages
+error:
+  player_only: "&cThis command can only be used by players!"
+  unknown_error: "&cAn unknown error occurred!"
+
+# NPC
+npc:
+  begin_adventure:
+    name: "&a&lBegin Your Adventure"
+
+# GUI
+gui:
+  class_selection:
+    title: "Choose Your Class"
+    warrior:
+      name: "&c&lWarrior"
+      lore:
+        - "&7A strong melee fighter"
+        - "&7Masters of close combat"
+        - ""
+        - "&eClick to select!"
+    mage:
+      name: "&9&lMage"
+      lore:
+        - "&7A powerful spell caster"
+        - "&7Masters of magic"
+        - ""
+        - "&eClick to select!"
+    archer:
+      name: "&a&lArcher"
+      lore:
+        - "&7A skilled ranged fighter"
+        - "&7Masters of the bow"
+        - ""
+        - "&eClick to select!"
+    rogue:
+      name: "&e&lRogue"
+      lore:
+        - "&7A swift assassin"
+        - "&7Masters of stealth"
+        - ""
+        - "&eClick to select!"

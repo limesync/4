@@ -1,0 +1,106 @@
+name: MobRealmsCore
+version: '1.0.0'
+main: com.mobrealms.core.MobRealmsCore
+api-version: '1.20'
+softdepend: [PlaceholderAPI]
+author: MobRealms
+description: Core plugin for MobRealms RPG server
+
+commands:
+  mobrealms:
+    description: Show MobRealms help menu
+    aliases: [mr, mrhelp]
+  setlobby:
+    description: Set the lobby spawn location
+    permission: mobrealms.admin
+  setspawn:
+    description: Set spawn location for a realm
+    usage: /setspawn <realm>
+    permission: mobrealms.admin
+  setcoins:
+    description: Set player coins
+    usage: /setcoins <player> <amount>
+    permission: mobrealms.admin
+  addcoins:
+    description: Add coins to player
+    usage: /addcoins <player> <amount>
+    permission: mobrealms.admin
+  givecoins:
+    description: Give coins to player
+    usage: /givecoins <player> <amount>
+    permission: mobrealms.admin
+  removecoins:
+    description: Remove coins from player
+    usage: /removecoins <player> <amount>
+    permission: mobrealms.admin
+  setxp:
+    description: Set player XP
+    usage: /setxp <player> <amount>
+    permission: mobrealms.admin
+  addxp:
+    description: Add XP to player
+    usage: /addxp <player> <amount>
+    permission: mobrealms.admin
+  setlevel:
+    description: Set player level
+    usage: /setlevel <player> <level>
+    permission: mobrealms.admin
+  setclass:
+    description: Set player class
+    usage: /setclass <player> <class>
+    permission: mobrealms.admin
+  resetclass:
+    description: Reset player class
+    usage: /resetclass <player>
+    permission: mobrealms.admin
+  spawnadventurenpc:
+    description: Spawn Begin Adventure NPC
+    permission: mobrealms.admin
+  kit:
+    description: Claim your class kit
+    usage: /kit
+  mobspawner:
+    description: Open mob spawner GUI for custom mobs
+    usage: /mobspawner
+    permission: mobrealms.mobspawner
+    aliases: [mobs, spawner]
+  killmobs:
+    description: Kill all mobs in a world
+    usage: /killmobs [world]
+    permission: mobrealms.killmobs
+    aliases: [km, clearmobs]
+  spawnerinfo:
+    description: View information about all placed spawners
+    usage: /spawnerinfo
+    permission: mobrealms.spawnerinfo
+    aliases: [si, spawners]
+  stats:
+    description: View your statistics
+    usage: /stats
+    aliases: [statistics]
+  quests:
+    description: View your active quests
+    usage: /quests
+    aliases: [quest, q]
+  leaderboard:
+    description: View server leaderboards
+    usage: /leaderboard
+    aliases: [lb, top]
+  shop:
+    description: Open the server shop
+    usage: /shop
+    aliases: [store, buy]
+
+permissions:
+  mobrealms.admin:
+    description: Access to all admin commands
+    default: op
+  mobrealms.mobspawner:
+    description: Access to mob spawner GUI
+    default: op
+  mobrealms.killmobs:
+    description: Kill all mobs in a world
+    default: op
+  mobrealms.spawnerinfo:
+    description: View spawner information
+    default: op

@@ -1,0 +1,63 @@
+# MobRealms Scoreboard (Hypixel Style)
+
+enabled: true
+update_interval: 10
+
+title:
+  animated: false
+  static: "&b&lMOB&f&lREALMS"
+
+borders:
+  use_top: false
+  use_bottom: false
+  top: "&7&m                "
+  bottom: "&7&m                "
+
+lines:
+  1:
+    enabled: true
+    text: ""
+  2:
+    enabled: true
+    text: " &fLevel: &b{level}"
+  3:
+    enabled: true
+    text: " &7{xp}&8/&7{xp_required} XP"
+  4:
+    enabled: true
+    text: ""
+  5:
+    enabled: true
+    text: " &fRealm: &7{realm}"
+  6:
+    enabled: true
+    text: ""
+  7:
+    enabled: true
+    text: " &fCoins: &6{coins}"
+  8:
+    enabled: true
+    text: ""
+  9:
+    enabled: true
+    text: " &fKills: &a{kills}"
+  10:
+    enabled: true
+    text: " &fDeaths: &c{deaths}"
+  11:
+    enabled: true
+    text: ""
+  12:
+    enabled: true
+    text: " &7play.mobrealms.net"
+  13:
+    enabled: true
+    text: ""
+
+combat:
+  enabled: true
+  text: " &c⚔ &f{combat_timer}s"
+
+number_format:
+  use_short_format: true
+  decimal_places: 1

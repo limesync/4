@@ -1,0 +1,108 @@
+# MobRealms Core Messages
+
+prefix: "&8[&b&lMobRealms&8]&r"
+
+# Class selection
+class:
+  select_prompt: "&aChoose your class to begin your adventure!"
+  selected: "&aYou have chosen the &e{class} &aclass!"
+  already_selected: "&cYou have already selected a class!"
+  locked: "&cYou must select a class before doing that!"
+  reset: "&aYour class has been reset!"
+
+# Level system
+level:
+  levelup: "&6&lLEVEL UP! &eYou are now level &6{level}&e!"
+  max_level: "&cYou have reached max level!"
+
+# Realm system
+realm:
+  insufficient_level: "&cYou need level &e{required_level} &cto access &e{realm}&c!"
+  entered: "&aYou entered &e{realm}&a!"
+  spawn_set: "&aSpawn for &e{realm} &ahas been set!"
+
+# Coins
+coins:
+  set: "&aSet &e{player}&a's coins to &6{amount}&a!"
+  added: "&aAdded &6{amount} coins &ato &e{player}&a!"
+  removed: "&aRemoved &6{amount} coins &afrom &e{player}&a!"
+  insufficient: "&cYou don't have enough coins!"
+
+# Shop
+shop:
+  purchased: "&a&l✓ &aYou purchased {item} &afor &6{price} coins&a!"
+  insufficient_coins: "&c&l✗ &cYou don't have enough coins! Need &6{price} coins&c."
+  insufficient_level: "&c&l✗ &cYou need level {level} to purchase this item!"
+  class_already_owned: "&c&l✗ &cYou already own this class!"
+  class_unlocked: "&a&l✓ &aYou unlocked the {class} &aclass for &6{price} coins&a!"
+
+# XP
+xp:
+  set: "&aSet &e{player}&a's XP to &b{amount}&a!"
+  added: "&aAdded &b{amount} XP &ato &e{player}&a!"
+  gained: "&a+{amount} XP"
+
+# Commands
+command:
+  no_permission: "&cYou don't have permission to use this command!"
+  player_not_found: "&cPlayer not found!"
+  invalid_amount: "&cInvalid amount!"
+  invalid_class: "&cInvalid class! Available: Warrior, Mage, Archer, Rogue"
+  lobby_set: "&aLobby spawn has been set!"
+  npc_spawned: "&aBegin Adventure NPC has been spawned!"
+  usage: "&cUsage: {usage}"
+
+# Kit system
+kit:
+  received: "&aYou received your &e{class} &akit!"
+  cooldown: "&cYou must wait &e{time} &cbefore claiming another kit!"
+  no_class: "&cYou must select a class first!"
+  invalid_class: "&cInvalid class!"
+
+# Teleportation
+teleport:
+  spawn: "&aYou have been teleported to spawn!"
+  lobby: "&aYou have been teleported to lobby!"
+
+# Error messages
+error:
+  player_only: "&cThis command can only be used by players!"
+  unknown_error: "&cAn unknown error occurred!"
+
+# NPC
+npc:
+  begin_adventure:
+    name: "&a&lBegin Your Adventure"
+
+# GUI
+gui:
+  class_selection:
+    title: "Choose Your Class"
+    warrior:
+      name: "&c&lWarrior"
+      lore:
+        - "&7A strong melee fighter"
+        - "&7Masters of close combat"
+        - ""
+        - "&eClick to select!"
+    mage:
+      name: "&9&lMage"
+      lore:
+        - "&7A powerful spell caster"
+        - "&7Masters of magic"
+        - ""
+        - "&eClick to select!"
+    archer:
+      name: "&a&lArcher"
+      lore:
+        - "&7A skilled ranged fighter"
+        - "&7Masters of the bow"
+        - ""
+        - "&eClick to select!"
+    rogue:
+      name: "&e&lRogue"
+      lore:
+        - "&7A swift assassin"
+        - "&7Masters of stealth"
+        - ""
+        - "&eClick to select!"
